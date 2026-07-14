@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/DELL/Desktop/summerCPP/Classes/practice",
-      "program": "c:/Users/DELL/Desktop/summerCPP/Classes/practice/build/Debug/outDebug",
+      "cwd": "c:/Users/DELL/Desktop/summerCPP/Algorithms",
+      "program": "c:/Users/DELL/Desktop/summerCPP/Algorithms/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
