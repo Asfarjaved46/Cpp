@@ -1,7 +1,8 @@
 #include<iostream>
+using namespace std;
+
 #include<vector>
 #include<queue>
-using namespace std;
 
 int main(){
 
@@ -20,11 +21,15 @@ graph[3].push_back({1,2});
 graph[3].push_back({2,5});
 
 vector<int> dist(4,1e9);
+dist[0] = 0;
+
 priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
-int start = 0;
-vector<int> parent(4,-1);
+
+ int start = 0;
+
     dist[start] = 0;
 
+    // (distance, node)
     pq.push({0, start});
 
     while (!pq.empty())
@@ -53,7 +58,7 @@ vector<int> parent(4,-1);
             {
                 dist[nextNode] =
                     currentDistance + weight;
-                parent[nextNode] = currentNode;
+
                 pq.push(
                 {
                     dist[nextNode],
@@ -69,36 +74,24 @@ vector<int> parent(4,-1);
     for (int i = 0; i < dist.size(); i++)
     {
         cout << i << " : "
-            << dist[i] << endl;
-    }
-    for(int i=0;i<4;i++)
-{
-    cout
-        << i
-        << " <- "
-        << parent[i]
-        << endl;
-}
-
-int destination = 3;
-
-vector<int> path;
-
-int current = destination;
-
-while (current != -1)
-{
-    path.push_back(current);
-
-    current = parent[current];
-}
-for (int i = path.size() - 1; i >= 0; i--)
-{
-    cout << path[i];
-
-    if (i != 0)
-    {
-        cout << " -> ";
+             << dist[i] << endl;
     }
 }
+
+
+
+// pq.push({0,0});
+
+// pq.top().first;
+// pq.top().second; 
+
+    // for(int i = 0;i<graph.size();i++){
+    //     cout<<i<<" ->";
+    //     for(int j = 0;j<graph[i].size();j++){
+    //         cout<<"("<<graph[i][j].first<<" , "<<graph[i][j].second<<")";
+    //     }
+    //     cout<<endl;
+    // }
+
 }
+
